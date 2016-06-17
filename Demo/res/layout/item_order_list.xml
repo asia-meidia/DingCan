@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical" 
+    >
+    
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="30dp"
+	    android:layout_marginTop="5dp"
+	    android:orientation="horizontal"
+	    >
+	    <TextView 
+	        android:id="@+id/item_order_name"
+	        android:layout_width="0dp"
+	        android:layout_height="28dp"
+	        android:layout_weight="1"
+        	android:dividerHeight="1dp" 
+	        android:text="菜名：东波肉"
+	        android:paddingLeft="10dp"
+	        android:gravity="center_vertical"
+	        android:background="#FFFAFA"/>
+	    <TextView 
+	        android:id="@+id/item_order_price"
+	        android:layout_width="0dp"
+	        android:layout_height="28dp"
+	        android:layout_weight="1"
+	        android:divider="@color/lightgray"
+        	android:dividerHeight="1dp" 
+	        android:text="价格：30"
+	        android:paddingLeft="10dp"
+	        android:gravity="center_vertical"
+	        android:background="#FFFAFA"/>
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="60dp"
+	    android:orientation="vertical" >
+
+	    <TextView
+	        android:id="@+id/item_order_phone"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1"
+	        android:divider="@color/lightgray"
+        	android:dividerHeight="1dp"
+	        android:text="电话：188131563" 
+	        android:paddingLeft="10dp"
+	        android:background="#FFFAFA"/>
+
+	    <TextView
+	        android:id="@+id/item_order_address"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1"
+	        android:divider="@color/lightgray"
+        	android:dividerHeight="1dp"
+	        android:text="送餐地址：朝阳区" 
+	        android:paddingLeft="10dp"
+	        android:background="#FFFAFA"/>
+
+	    <TextView
+	        android:id="@+id/item_order_time"
+	        android:layout_width="match_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1"
+	        android:divider="@color/lightgray"
+        	android:dividerHeight="1dp"
+	        android:text="下单日期：2015-05-14 12:03:30" 
+	        android:paddingLeft="10dp"
+	        android:background="#FFFAFA"/>
+	</LinearLayout>
+	
+</LinearLayout>

@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity" >
+    
+    <include
+        android:id="@+id/headerview"
+        layout="@layout/headerview_layout" />
+
+    <EditText
+        android:id="@+id/et_username"
+        android:hint="登录名"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:hint="密码"
+        android:password="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+   <LinearLayout
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <Button
+           android:id="@+id/login"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:text="登录"
+           android:layout_height="wrap_content" />
+       <Button
+           android:id="@+id/sign"
+           android:text="注册"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content" />
+   </LinearLayout>
+
+</LinearLayout>
