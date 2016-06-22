@@ -67,12 +67,11 @@
                         android:layout_weight="4" >
 
                         <EditText
-                            android:id="@+id/et_login_userphone"
+                            android:id="@+id/et_login_username"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@null"
-                            android:hint="请输入手机号"
-                            android:inputType="number" />
+                            android:hint="请输入用户名" />
                     </LinearLayout>
                 </LinearLayout>
 

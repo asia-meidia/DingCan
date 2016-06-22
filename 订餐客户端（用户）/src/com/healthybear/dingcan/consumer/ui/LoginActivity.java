@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -27,7 +28,7 @@ public class LoginActivity extends BaseActivity {
 	
 	View headerView;
 	
-	EditText etPhone;
+	EditText etName;
 	EditText etPassword;
 	
 	CircularProgressButton button;
@@ -61,7 +62,7 @@ public class LoginActivity extends BaseActivity {
 	private void initView() {
 		tv_toregister = (TextView) findViewById(R.id.tv_login);
 		headerView = findViewById(R.id.headerview);
-		etPhone = (EditText) findViewById(R.id.et_login_userphone);
+		etName = (EditText) findViewById(R.id.et_login_username);
 		etPassword = (EditText) findViewById(R.id.et_login_password);
 		button = (CircularProgressButton) findViewById(R.id.btn_login_login);
 		button.setOnClickListener(new OnClickListener() {
@@ -69,7 +70,7 @@ public class LoginActivity extends BaseActivity {
 			@Override
 			public void onClick(View arg0) {
 				//1)ÅÐ¿Õ
-				if(isEmpty(etPhone,etPassword)){
+				if(isEmpty(etName,etPassword)){
 					return;
 				}
 				//2)ÅÐÍø
@@ -79,7 +80,7 @@ public class LoginActivity extends BaseActivity {
 				}
 				//3)µÇÂ¼
 				User user = new User();
-				user.setMobilePhoneNumber(etPhone.getText().toString());
+				user.setUsername(etName.getText().toString());
 				user.setPassword(etPassword.getText().toString());
 				button.setIndeterminateProgressMode(true);
 				button.setProgress(50);
@@ -93,6 +94,7 @@ public class LoginActivity extends BaseActivity {
 					
 					@Override
 					public void onFailure(int arg0, String arg1) {
+						Toast.makeText(LoginActivity.this, arg1, 1).show();
 						button.setProgress(0);
 						switch (arg0) {
 						case 101:

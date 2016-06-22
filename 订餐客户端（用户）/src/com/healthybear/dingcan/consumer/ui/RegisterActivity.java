@@ -18,7 +18,6 @@ import com.healthybear.dingcan.consumer.util.NetUtil;
 public class RegisterActivity extends BaseActivity {
 
 	View headerView;
-	EditText etPhone;
 	EditText etName;
 	EditText etPassword;
 	EditText etRePassword;
@@ -41,7 +40,6 @@ public class RegisterActivity extends BaseActivity {
 
 	private void initView() {
 		headerView = findViewById(R.id.headerview);
-		etPhone = (EditText) findViewById(R.id.et_register_phone);
 		etName = (EditText) findViewById(R.id.et_register_name);
 		etPassword = (EditText) findViewById(R.id.et_register_password);
 		etRePassword = (EditText) findViewById(R.id.et_register_password2);
@@ -67,7 +65,7 @@ public class RegisterActivity extends BaseActivity {
 			@Override
 			public void onClick(View arg0) {
 				//1) 判空
-				if(isEmpty(etPhone,etPassword,etRePassword)){
+				if(isEmpty(etName,etPassword,etRePassword)){
 					return;
 				}
 				//2) 两次输入的密码是否一致
@@ -84,7 +82,6 @@ public class RegisterActivity extends BaseActivity {
 				//4) 注册用户
 				User user = new User();
 				user.setUsername(etName.getText().toString());
-				user.setMobilePhoneNumber(etPhone.getText().toString());
 				user.setPassword(etPassword.getText().toString());
 				user.setInstallId(BmobInstallation.getInstallationId(RegisterActivity.this));
 				

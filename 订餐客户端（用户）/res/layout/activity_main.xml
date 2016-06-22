@@ -1,16 +1,90 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context=".MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <include 
+        android:id="@+id/headerview"
+        layout="@layout/header_layout"/>
+    
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        android:id="@+id/listview_main_food"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
+    
+    
+    
+    
+    
+    <LinearLayout 
+        android:id="@+id/ll_price_commit"
+        android:visibility="gone"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:orientation="vertical">
+	    <TextView 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:text="商品总价："/>
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="50dp"
+	        android:orientation="horizontal">
+	        <LinearLayout 
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:layout_marginLeft="10dp"
+	            android:orientation="vertical">
+	            <LinearLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:orientation="vertical">
+	                <RelativeLayout 
+	                    android:layout_width="match_parent"
+	                    android:layout_height="0dp"
+	                    android:layout_weight="2"
+	                    >
+	                	<ImageView 
+	                    	android:id="@+id/iv_main_delete"
+	                    	android:layout_width="match_parent"
+	                    	android:layout_height="match_parent"
+	                    	android:src="@drawable/delete"/>
+	                </RelativeLayout>
+	                <TextView 
+	                    android:id="@+id/tv_main_delete"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="0dp"
+	                    android:layout_weight="1"
+	                    android:gravity="center"
+	                    android:text="删除"/>
+	            </LinearLayout>
+	        </LinearLayout>
+	        <TextView 
+	            android:id="@+id/tv_main_totalprice"
+	            android:layout_width="0dp"
+	            android:gravity="center"
+	            android:layout_height="match_parent"
+	            android:layout_weight="2"
+	            android:text="10000000元"
+	            android:textSize="26sp"/>
+	        <Button 
+	            android:id="@+id/btn_main_commitorder"
+	            android:layout_width="0dp"
+	            android:padding="2dp"
+	            android:gravity="center"
+	            android:layout_height="match_parent"
+	            android:layout_weight="1"
+	            android:textSize="19sp"
+	            android:background="#FF0000"
+	            android:text="结算"/>
+	    </LinearLayout>
+    </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
